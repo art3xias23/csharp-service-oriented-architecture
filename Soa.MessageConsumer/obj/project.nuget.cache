@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ZR3DYv4gyhYp8v054ZfFfxiKR9eI9qtlmyzMyccIrCFm/VaV1g384Uq4XQOZRHdGMWVaxwMpPUqrpVFolfMww==",
+  "dgSpecHash": "WITBUe4q+u/mVEdLctBLBV1bwsqRwmE5D9+zqIuJ8a7nRK9LSy4afSigWAb9AsHusld6GdFYErxxIzBPvUKFvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.FineGrain\\Soa.csproj",
+  "projectFilePath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.MessageConsumer\\Soa.MessageConsumer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kmilchev\\.nuget\\packages\\rabbitmq.client\\6.8.1\\rabbitmq.client.6.8.1.nupkg.sha512",
     "C:\\Users\\kmilchev\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",

@@ -1,9 +1,19 @@
-﻿using Soa.FineGrain.Models;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.Connections;
+using RabbitMQ.Client;
+using Soa.FineGrain.Messages;
+using Soa.FineGrain.Models;
 
 namespace Soa.FineGrain.Services
 {
     public class OrderService : IOrderService
     {
+        private readonly IConnection _connection;
+        public OrderService(IConnection connection)
+        {
+            _connection = connection; 
+        }
+    
         private List<Order> GetDummyOrders()
         {
             var orders = new List<Order>
@@ -53,6 +63,29 @@ namespace Soa.FineGrain.Services
         {
             var orders = GetDummyOrders();
             return orders;
+        }
+
+        public void PlaceOrder(int orderId, List<OrderItem> items)
+        {
+            var orderPlacedEvent = new OrderPlacedEvent
+            {
+                OrderId = orderId,
+                Items = items
+            };
+
+            PublishOrderPlacedEvent(orderPlacedEvent);
+        }
+
+        private void PublishOrderPlacedEvent(OrderPlacedEvent orderPlacedEvent)
+        {
+            using var channel = _connection.CreateModel();
+            channel.QueueDeclare(queue: "OrderPlacedQueue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+
+            var messageBody = JsonSerializer.Serialize(orderPlacedEvent);
+            var body = System.Text.Encoding.UTF8.GetBytes(messageBody);
+
+            channel.BasicPublish(exchange: "", routingKey: "OrderPlacedQueue", basicProperties: null, body: body);
+            Console.WriteLine("Sent: " + messageBody);
         }
     }
 }

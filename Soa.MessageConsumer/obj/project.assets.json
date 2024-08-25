@@ -43,6 +43,22 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "Soa/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "RabbitMQ.Client": "6.8.1"
+        },
+        "compile": {
+          "bin/placeholder/Soa.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Soa.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -115,11 +131,17 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Soa/1.0.0": {
+      "type": "project",
+      "path": "../Soa.FineGrain/Soa.csproj",
+      "msbuildProject": "../Soa.FineGrain/Soa.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "RabbitMQ.Client >= 6.8.1"
+      "RabbitMQ.Client >= 6.8.1",
+      "Soa >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -129,11 +151,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.FineGrain\\Soa.csproj",
-      "projectName": "Soa",
-      "projectPath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.FineGrain\\Soa.csproj",
+      "projectUniqueName": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.MessageConsumer\\Soa.MessageConsumer.csproj",
+      "projectName": "Soa.MessageConsumer",
+      "projectPath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.MessageConsumer\\Soa.MessageConsumer.csproj",
       "packagesPath": "C:\\Users\\kmilchev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.FineGrain\\obj\\",
+      "outputPath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.MessageConsumer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -155,7 +177,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.FineGrain\\Soa.csproj": {
+              "projectPath": "C:\\Users\\kmilchev\\Desktop\\Code\\C#\\Soa\\Soa.FineGrain\\Soa.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -185,9 +211,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

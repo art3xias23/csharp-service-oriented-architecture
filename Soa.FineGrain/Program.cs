@@ -1,4 +1,5 @@
 using Soa.FineGrain.Services;
+using Soa.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
