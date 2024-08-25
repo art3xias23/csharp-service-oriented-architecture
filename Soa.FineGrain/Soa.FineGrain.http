@@ -1,0 +1,6 @@
+@Soa.FineGrain_HostAddress = http://localhost:5236
+
+GET {{Soa.FineGrain_HostAddress}}/products/
+Accept: application/json
+
+###
