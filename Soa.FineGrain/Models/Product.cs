@@ -1,4 +1,4 @@
-﻿namespace Soa.FineGrain
+﻿namespace Soa.FineGrain.Models
 {
     public class Product
     {

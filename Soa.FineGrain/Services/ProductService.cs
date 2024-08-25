@@ -1,8 +1,9 @@
-﻿namespace Soa.FineGrain
+﻿using Soa.FineGrain.Models;
+
+namespace Soa.FineGrain.Services
 {
     public class ProductService : IProductService
     {
-        private readonly List<Product?> _products = new List<Product?>();
 
         public IEnumerable<Product?> GetAllProducts()
         {
@@ -41,7 +42,8 @@
 
         public Product? GetProductById(int id)
         {
-            return _products.Find(p => p.Id == id);
+            var products =  GetDummyProducts();
+            return products.ToList().Find(p => p.Id == id);
         }
     }
 }

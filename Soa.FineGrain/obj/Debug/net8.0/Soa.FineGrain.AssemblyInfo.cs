@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Soa.FineGrain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27f9d34e153d0aac8b5e32cb5693336debcab86f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8ac0ea05efdd318e646df0410b1b6a090b2aca7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Soa.FineGrain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Soa.FineGrain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
